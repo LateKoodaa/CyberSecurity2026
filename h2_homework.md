@@ -31,7 +31,7 @@
 * Scams: CEO fraud attempts were seen almost daily. Criminals also use stolen online banking credentials to take loans in the victim's name.
 * Top five threats for the near future: faster exploitation of vulnerabilities, AI risk management, supply chain security, critical infrastructure protection, and ransomware.
 * Forecast for October is "worrying": the Citrix situation is not over, and scams and website breaches are expected to continue.
-* My idea: 
+* My idea: "Patching is not enough": if attackers exploit a vulnerability before the update, patching only closes the door, so organisations must also check whether someone is already inside.
 
 
 
