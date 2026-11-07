@@ -47,3 +47,23 @@
 
 <img width="957" height="640" alt="image" src="https://github.com/user-attachments/assets/a75f496c-2da0-4752-9f99-0372892140df" />
 
+<img width="700" height="190" alt="image" src="https://github.com/user-attachments/assets/590cfd22-d22c-4d40-8db2-127b0b020171" />
+
+- __sudo apt-get update__   
+- __sudo apt-get upgrade__
+
+<img width="1020" height="767" alt="image" src="https://github.com/user-attachments/assets/21b21621-e0e5-40e7-88d6-22d1cfd6afe8" />
+
+<img width="966" height="381" alt="image" src="https://github.com/user-attachments/assets/551a1320-47c3-4c55-af6b-4ac3656e8714" />
+
+<img width="981" height="592" alt="image" src="https://github.com/user-attachments/assets/1d91627c-8da8-4e4b-9182-e8ddf6a4c542" />
+
+- __sudo reboot__
+
+<img width="860" height="572" alt="image" src="https://github.com/user-attachments/assets/ce26a2ae-629f-4e63-bd5c-4d74cfaf8d10" />
+
+<img width="1025" height="772" alt="image" src="https://github.com/user-attachments/assets/358891c4-0cd4-4ce8-87ea-58e239e803bb" />
+
+Removing the installation media
+
+<img width="1030" height="770" alt="image" src="https://github.com/user-attachments/assets/fd095c0a-825f-4767-91c6-121404eaf96c" />
