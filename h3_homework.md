@@ -67,3 +67,33 @@
 Removing the installation media
 
 <img width="1030" height="770" alt="image" src="https://github.com/user-attachments/assets/fd095c0a-825f-4767-91c6-121404eaf96c" />
+
+## c) Crack
+
+The goal of this task is to crack the hash
+`6b1628b016dff46e6fa35684be6acc96` using Hashcat, following Karvinen 2022.
+
+
+```bash
+sudo apt-get update
+sudo apt-get -y install hashid hashcat wget
+```
+
+<img width="942" height="607" alt="image" src="https://github.com/user-attachments/assets/64298d1a-bf1f-4f6c-81ed-efddaf514188" />
+
+<img width="417" height="92" alt="image" src="https://github.com/user-attachments/assets/7caa4ff2-455a-4bf8-857a-72eccdec7a2e" />
+
+<img width="930" height="161" alt="image" src="https://github.com/user-attachments/assets/a4778e88-2096-4199-8d0a-175537a8c6b1" />
+
+<img width="777" height="397" alt="image" src="https://github.com/user-attachments/assets/f23e7596-8978-4bad-a15b-b17d312f519b" />
+
+<img width="932" height="582" alt="image" src="https://github.com/user-attachments/assets/03a286af-7415-4f17-ba52-44b51cfe8358" />
+
+6b1628b016dff46e6fa35684be6acc96:summer
+
+## References
+ 
+- Heinonen, J. (2026). *How to Install Linux to VirtualBox?* https://github.com/johannaheinonen/johanna-test-repo/blob/main/module_1.md
+- Karvinen, T. (2020). *Command Line Basics Revisited.* https://terokarvinen.com/2020/command-line-basics-revisited/
+- Karvinen, T. (2022). *Cracking Passwords with Hashcat.* https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
+
