@@ -68,6 +68,79 @@ Removing the installation media
 
 <img width="1030" height="770" alt="image" src="https://github.com/user-attachments/assets/fd095c0a-825f-4767-91c6-121404eaf96c" />
 
+### Problems and fixes
+
+During this task I ran into two real problems. I document them here because
+they took the most work to solve.
+
+#### Problem 1: the virtual machine hung on boot (graphics)
+
+After installing Debian and rebooting, the VM hung on a black screen. The boot
+messages showed a graphics driver error:
+
+vmwgfx [drm] ERROR vmwgfx seems to be running on an unsupported hypervisor.
+
+
+The default VMSVGA graphics controller loads the Linux vmwgfx driver, which
+does not work well under VirtualBox and froze the graphical boot.
+
+Fix: I powered the VM off and changed the display settings in VirtualBox
+(Settings > Display):
+
+- Graphics Controller: VBoxSVGA (instead of VMSVGA)
+- Video Memory: 128 MB
+
+After this the VM booted to the login screen normally.
+
+#### Problem 2: no internet in the installed system (network)
+
+After installation, apt could not reach the Debian servers:
+
+Temporary failure resolving ‘deb.debian.org’
+
+
+Checking the interface showed it only had IPv6 addresses and no IPv4 address,
+and a ping to an IPv4 address failed:
+
+```bash
+ip a
+ping -c3 1.1.1.1   # Network is unreachable
+```
+
+The VirtualBox NAT DHCP was not giving the guest an IPv4 address, and reboots
+and full power cycles did not help. Setting a static IPv4 by hand worked and
+gave full connectivity:
+
+```bash
+sudo ip addr add 10.0.2.15/24 dev enp0s3
+sudo ip route add default via 10.0.2.2
+```
+
+Both the NAT gateway (10.0.2.2) and the internet (1.1.1.1) then answered,
+which showed the problem was not the NAT itself but how the address was being
+assigned.
+
+To make this permanent I set the static address in NetworkManager. At first
+NetworkManager reported the connection as activated but still did not apply the
+IPv4 address. The root cause was Duplicate Address Detection (DAD):
+NetworkManager checks whether the address is already in use, and VirtualBox
+reserves 10.0.2.15 for its DHCP, so DAD treated it as a conflict and skipped
+the address. Disabling DAD fixed it:
+
+```bash
+sudo nmcli con mod "Wired connection 1" ipv4.method manual ipv4.addresses 10.0.2.15/24 ipv4.gateway 10.0.2.2 ipv4.dns 10.0.2.3
+sudo nmcli con mod "Wired connection 1" ipv4.dad-timeout 0
+sudo nmcli con up "Wired connection 1"
+```
+
+After this NetworkManager applied the IPv4 address, and it survived a reboot.
+I confirmed it with:
+
+```bash
+ip a                     # enp0s3 now has inet 10.0.2.15
+ping -c3 deb.debian.org  # name resolution and internet work
+```
+
 ## c) Crack
 
 The goal of this task is to crack the hash
