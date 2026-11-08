@@ -55,8 +55,10 @@ I reserved the following presentation title in Laksu:
 
 <img width="700" height="190" alt="image" src="https://github.com/user-attachments/assets/590cfd22-d22c-4d40-8db2-127b0b020171" />
 
-- __sudo apt-get update__   
-- __sudo apt-get upgrade__
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
 
 <img width="1020" height="767" alt="image" src="https://github.com/user-attachments/assets/21b21621-e0e5-40e7-88d6-22d1cfd6afe8" />
 
@@ -64,7 +66,9 @@ I reserved the following presentation title in Laksu:
 
 <img width="981" height="592" alt="image" src="https://github.com/user-attachments/assets/1d91627c-8da8-4e4b-9182-e8ddf6a4c542" />
 
-- __sudo reboot__
+```bash
+sudo reboot
+```
 
 <img width="860" height="572" alt="image" src="https://github.com/user-attachments/assets/ce26a2ae-629f-4e63-bd5c-4d74cfaf8d10" />
 
@@ -176,3 +180,4 @@ sudo apt-get -y install hashid hashcat wget
 - Karvinen, T. (2020). *Command Line Basics Revisited.* https://terokarvinen.com/2020/command-line-basics-revisited/
 - Karvinen, T. (2022). *Cracking Passwords with Hashcat.* https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
 
+**AI assistance disclosure:** Claude assisted with organizing and editing this report. Commands, settings, and verification results are based on my own work.
