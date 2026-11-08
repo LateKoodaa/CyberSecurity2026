@@ -23,6 +23,12 @@
 - The lesson works both ways. Common dictionary words are cracked in seconds, so your own passwords should be long and unique. The tool is used only on your own hashes or on authorized practice targets.
 - **My question:** How long or complex does a password need to be so that it is not found in a wordlist?
 
+## a) Presentation title
+
+I reserved the following presentation title in Laksu:
+
+**Where does SAP keep its keys? Encryption and key management in SAP HANA**
+
 ## b) Linux. Install Linux on a virtual machine. Use Debian 13-Trixie.
 
 <img width="1015" height="495" alt="image" src="https://github.com/user-attachments/assets/1074c207-7182-4c1c-a50d-7cd491297f56" />
