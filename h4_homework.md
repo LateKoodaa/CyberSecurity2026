@@ -68,6 +68,74 @@ I added the National Cyber Security Centre Finland (NCSC-FI) for an official Fin
 
 ## e) Follow security feeds for a while.
 
+Thunderbird does not have a combined view of all feeds by default, so I created one as a saved search (Karvinen 2026). I right-clicked "Blogs & News Feeds", chose Search Messages and set the rule "Age In Days is less than 30". Then I saved the search as a folder named "month".
+
+<img width="751" height="482" alt="image" src="https://github.com/user-attachments/assets/b046f911-a94e-4a9c-bcb7-91800c195ae0" />
+
+<img width="1015" height="730" alt="image" src="https://github.com/user-attachments/assets/cea2b5ef-88e1-4eb2-b817-fe1f6ddbd288" />
+
+### What I learned from following feeds
+
+Unfortunately I could only follow the feeds for about one day. However, the "month" view shows the articles from the previous weeks, so I could still see how often each feed updates.
+
+The most interesting article was "New OpenSSH Vulnerability" on Schneier on Security (10 November 2026). The same vulnerability was discussed in a student presentation in our last class.
+
+Benefits: It is easier to find information about current topics, and I do not need to move from site to site to check what is new.
+
+Downsides: The benefit depends on choosing the feeds well, so it is worth limiting them to sources that really interest me. Compared to social media, feeds have no discussion and do not help me discover new sources.
+
+## f) Port scan
+
+I installed nmap and Apache while the network was still connected and stopped Apache before the first scan:
+
+```
+sudo apt-get update
+sudo apt-get -y install nmap apache2
+sudo systemctl stop apache2
+```
+
+Then I disconnected the network adapter from the VirtualBox menu (Devices > Network) and also disconnected my OS PC network capel. Ping showed that the internet was not reachable:
+
+<img width="341" height="207" alt="image" src="https://github.com/user-attachments/assets/b2624740-5220-4cf8-a36d-419e18159665" />
+
+<img width="402" height="53" alt="image" src="https://github.com/user-attachments/assets/91310f20-1250-48ae-8c2c-a8805d599256" />
+
+### First scan
+
+```
+sudo nmap -A -v localhost
+```
+
+```
+Not shown: 999 closed tcp ports (reset)
+PORT    STATE SERVICE VERSION
+631/tcp open  ipp     CUPS 2.4
+|_http-server-header: CUPS/2.4 IPP/2.1
+|_http-title: Home - CUPS 2.4.10
+```
+
+Nmap scanned 1000 TCP ports. 999 were closed and one was open: port 631, the CUPS printing service.
+
+### Installing a daemon and second scan
+
+```
+sudo systemctl start apache2
+sudo nmap -A -v localhost
+```
+
+```
+Not shown: 998 closed tcp ports (reset)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Apache httpd 2.4.71 ((Debian))
+|_http-server-header: Apache/2.4.71 (Debian)
+|_http-title: Apache2 Debian Default Page: It works
+631/tcp open  ipp     CUPS 2.4
+```
+
+## How can criminals know what services your employer has?
+
+Port 80 appeared as soon as Apache was running. Nmap found the software name, the exact version (2.4.71), the operating system (Debian) and the fact that the server still has its default page. Criminals can learn what services my employer runs by scanning its public IP addresses. With the version number they can search for known vulnerabilities in exactly that version. I also learned that a machine can run services I did not know about, like CUPS here.
+
 
 
 ### References
