@@ -143,3 +143,6 @@ Port 80 appeared as soon as Apache was running. Nmap found the software name, th
 - RSS Advisory Board 2009: RSS 2.0 Specification. https://www.rssboard.org/rss-specification
 - Nottingham, M. & Sayre, R. 2005: RFC 4287, The Atom Syndication Format. https://www.rfc-editor.org/rfc/rfc4287
 - Supreme Court of Finland 2003: KKO:2003:36. [https://www.finlex.fi/en/case-law/supreme-court/precedents/2003/36](https://www.finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36#OT2_OT1)
+- Schneier, B. 2026: New OpenSSH Vulnerability. Schneier on Security. https://www.schneier.com/blog/archives/2026/11/new-openssh-vulnerability.html
+
+**AI assistance disclosure:** Claude assisted with organizing and editing this report. Commands, settings, and verification results are based on my own work.
