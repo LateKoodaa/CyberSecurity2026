@@ -132,7 +132,7 @@ PORT    STATE SERVICE VERSION
 631/tcp open  ipp     CUPS 2.4
 ```
 
-## How can criminals know what services your employer has?
+### How can criminals know what services your employer has?
 
 Port 80 appeared as soon as Apache was running. Nmap found the software name, the exact version (2.4.71), the operating system (Debian) and the fact that the server still has its default page. Criminals can learn what services my employer runs by scanning its public IP addresses. With the version number they can search for known vulnerabilities in exactly that version. I also learned that a machine can run services I did not know about, like CUPS here.
 
