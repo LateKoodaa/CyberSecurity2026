@@ -254,3 +254,6 @@ Without a password manager, people tend to reuse the same password on many sites
 - MITRE ATT&CK: Brute Force: Password Spraying, T1110.003. https://attack.mitre.org/techniques/T1110/003/
 - NCSC: Top tips for staying secure online, Password managers. https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/password-managers
 - KeePassXC. https://keepassxc.org/
+
+**AI assistance disclosure:** Claude assisted with organizing and editing this report. Commands, settings, and verification results are based on my own work.
+
